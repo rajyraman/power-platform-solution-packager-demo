@@ -32,12 +32,14 @@
                 "build unmanaged solution"
             ],
             "group": "build",
-            "dependsOrder": "sequence"
+            "dependsOrder": "sequence",
+            "problemMatcher": []
         },
         {
             "label": "build plugins",
             "type": "shell",
-            "command": "dotnet build '${workspaceFolder}\\src\\PowerPlatform.Demo.Plugins\\' -c:Release; dotnet build '${workspaceFolder}\\src\\PowerPlatform.Demo.Plugins\\'"
+            "command": "dotnet build '${workspaceFolder}\\src\\PowerPlatform.Demo.Plugins\\' -c:Release; dotnet build '${workspaceFolder}\\src\\PowerPlatform.Demo.Plugins\\'",
+            "problemMatcher": []
         },
         {
             "label": "build managed solution",
@@ -45,7 +47,8 @@
             "command": "$env:solutionversion = (Select-Xml -Path '${workspaceFolder}\\src\\Solution\\src\\Other\\Solution.xml' -XPath '//Version' | Select-Object @{ n = 'Version'; e = { $_.Node.'#text' } }).Version.Replace('.', '_'); dotnet build '${workspaceFolder}\\src\\Solution\\' -c:Release -v:quiet /p:SolutionFileVersion=$env:solutionversion",
             "dependsOn": [
                 "build plugins"
-            ]
+            ],
+            "problemMatcher": []
         },
         {
             "label": "build unmanaged solution",
@@ -53,12 +56,14 @@
             "command": "$env:solutionversion = (Select-Xml -Path '${workspaceFolder}\\src\\Solution\\src\\Other\\Solution.xml' -XPath '//Version' | Select-Object @{ n = 'Version'; e = { $_.Node.'#text' } }).Version.Replace('.', '_'); dotnet build '${workspaceFolder}\\src\\Solution\\' -v:quiet /p:SolutionFileVersion=$env:solutionversion",
             "dependsOn": [
                 "build plugins"
-            ]
+            ],
+            "problemMatcher": []
         },
         {
             "label": "sync solution",
             "type": "shell",
-            "command": "pac solution sync --packagetype Both --solution-folder '${workspaceFolder}\\src\\Solution\\src\\'"
+            "command": "pac solution sync --packagetype Both --solution-folder '${workspaceFolder}\\src\\Solution\\src\\'",
+            "problemMatcher": []
         }
     ]
 }

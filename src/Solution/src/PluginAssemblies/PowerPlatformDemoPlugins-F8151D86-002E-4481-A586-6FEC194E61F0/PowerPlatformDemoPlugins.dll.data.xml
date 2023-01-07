@@ -1,14 +1,14 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<PluginAssembly FullName="PowerPlatform.Demo.Plugins, Version=1.0.0.0, Culture=neutral, PublicKeyToken=33848f7f58e700d4" PluginAssemblyId="f8151d86-002e-4481-a586-6fec194e61f0" CustomizationLevel="1" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+<PluginAssembly FullName="PowerPlatform.Demo.Plugins, Version=1.0.0.1, Culture=neutral, PublicKeyToken=33848f7f58e700d4" PluginAssemblyId="f8151d86-002e-4481-a586-6fec194e61f0" CustomizationLevel="1" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
   <IsolationMode>2</IsolationMode>
   <SourceType>0</SourceType>
   <IntroducedVersion>1.0</IntroducedVersion>
   <FileName>/PluginAssemblies/PowerPlatformDemoPlugins-F8151D86-002E-4481-A586-6FEC194E61F0/PowerPlatformDemoPlugins.dll</FileName>
   <PluginTypes>
-    <PluginType AssemblyQualifiedName="PowerPlatform.Demo.Plugins.AnotherEmptyPlugin, PowerPlatform.Demo.Plugins, Version=1.0.0.0, Culture=neutral, PublicKeyToken=33848f7f58e700d4" PluginTypeId="6ef18c71-27a3-4c93-b24a-26dde42a5290" Name="PowerPlatform.Demo.Plugins.AnotherEmptyPlugin">
+    <PluginType AssemblyQualifiedName="PowerPlatform.Demo.Plugins.AnotherEmptyPlugin, PowerPlatform.Demo.Plugins, Version=1.0.0.1, Culture=neutral, PublicKeyToken=33848f7f58e700d4" PluginTypeId="6ef18c71-27a3-4c93-b24a-26dde42a5290" Name="PowerPlatform.Demo.Plugins.AnotherEmptyPlugin">
       <FriendlyName>5a9c7f9a-d661-4a49-b598-36b136b776b7</FriendlyName>
     </PluginType>
-    <PluginType AssemblyQualifiedName="PowerPlatform.Demo.Plugins.EmptyPlugin, PowerPlatform.Demo.Plugins, Version=1.0.0.0, Culture=neutral, PublicKeyToken=33848f7f58e700d4" PluginTypeId="68087d36-2f0d-437d-b6d0-48b9cf9b6892" Name="PowerPlatform.Demo.Plugins.EmptyPlugin">
+    <PluginType AssemblyQualifiedName="PowerPlatform.Demo.Plugins.EmptyPlugin, PowerPlatform.Demo.Plugins, Version=1.0.0.1, Culture=neutral, PublicKeyToken=33848f7f58e700d4" PluginTypeId="68087d36-2f0d-437d-b6d0-48b9cf9b6892" Name="PowerPlatform.Demo.Plugins.EmptyPlugin">
       <FriendlyName>1e41db24-436d-4811-8220-9ae531489f50</FriendlyName>
     </PluginType>
   </PluginTypes>

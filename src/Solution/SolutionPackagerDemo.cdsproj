@@ -19,7 +19,8 @@
   <!-- Solution Packager overrides, un-comment to use: SolutionPackagerType (Managed, Unmanaged, Both) -->
   <PropertyGroup>
       <SolutionPackageMapFilePath>$(MSBuildThisFileDirectory)\mapping-$(Configuration).xml</SolutionPackageMapFilePath>
-      <SolutionPackageErrorLevel>Verbose</SolutionPackageErrorLevel>
+      <SolutionPackageErrorLevel Condition="'$(Configuration)' == 'Debug'">Verbose</SolutionPackageErrorLevel>
+      <SolutionPackageErrorLevel Condition="'$(Configuration)' == 'Release'">Info</SolutionPackageErrorLevel>
       <!-- The value for this property has to be passed during runtime when you run dotnet build -->
       <SolutionFileVersion></SolutionFileVersion>
       <SolutionPackageLogFilePath>$(MSBuildThisFileDirectory)\SolutionPackagerLogs\SolutionPackager$([System.DateTime]::Now.ToString("dd_MM_yyyy_HH_mm_ss")).log</SolutionPackageLogFilePath>

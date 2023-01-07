@@ -81,7 +81,7 @@
     </Publisher>
     <RootComponents>
       <RootComponent type="61" schemaName="ryr_ClientHooks.js" behavior="0" />
-      <RootComponent type="91" id="{f8151d86-002e-4481-a586-6fec194e61f0}" schemaName="PowerPlatform.Demo.Plugins, Version=1.0.0.0, Culture=neutral, PublicKeyToken=33848f7f58e700d4" behavior="0" />
+      <RootComponent type="91" id="{f8151d86-002e-4481-a586-6fec194e61f0}" schemaName="PowerPlatform.Demo.Plugins, Version=1.0.0.1, Culture=neutral, PublicKeyToken=33848f7f58e700d4" behavior="0" />
     </RootComponents>
     <MissingDependencies />
   </SolutionManifest>
