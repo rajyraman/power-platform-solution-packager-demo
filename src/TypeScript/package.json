@@ -1,0 +1,36 @@
+{
+  "name": "dataversedemoproject",
+  "sideEffects": false,
+  "version": "1.0.0",
+  "description": "",
+  "main": "webpack.config.js",
+  "dependencies": {
+    "dataverse-ify": "^2.0.3"
+  },
+  "devDependencies": {
+    "@microsoft/eslint-plugin-power-apps": "^0.2.2",
+    "@types/xrm": "^9.0.39",
+    "@typescript-eslint/eslint-plugin": "^4.22.1",
+    "@typescript-eslint/parser": "^4.22.1",
+    "eslint": "^7.25.0",
+    "eslint-config-prettier": "^8.3.0",
+    "eslint-plugin-prettier": "^3.4.0",
+    "eslint-plugin-react": "^7.23.2",
+    "eslint-plugin-sonarjs": "^0.14.0",
+    "prettier": "2.2.1",
+    "ts-loader": "^9.1.2",
+    "webpack": "^5.36.2",
+    "webpack-cli": "^4.6.0",
+    "webpack-merge": "^5.7.3"
+  },
+  "scripts": {
+    "test": "jest",
+    "build": "webpack --config webpack.dev.js",
+    "watch": "webpack --config webpack.dev.js --watch",
+    "dist": "webpack --config webpack.prod.js",
+    "lint": "eslint **/*.ts",
+    "lint:fix": "npm run lint -- --fix"
+  },
+  "author": "",
+  "license": "ISC"
+}

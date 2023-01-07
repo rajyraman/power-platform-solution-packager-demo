@@ -1,0 +1,64 @@
+{
+    "version": "2.0.0",
+    "windows": {
+        "options": {
+            "shell": {
+                "executable": "C:/Program Files/PowerShell/7/pwsh.exe",
+                "args": [
+                    "-NoProfile",
+                    "-ExecutionPolicy",
+                    "Bypass",
+                    "-Command"
+                ]
+            }
+        }
+    },
+    "linux": {
+        "options": {
+            "shell": {
+                "executable": "/usr/bin/pwsh",
+                "args": [
+                    "-NoProfile",
+                    "-Command"
+                ]
+            }
+        }
+    },
+    "tasks": [
+        {
+            "label": "build managed and unmanaged solutions",
+            "dependsOn": [
+                "build managed solution",
+                "build unmanaged solution"
+            ],
+            "group": "build",
+            "dependsOrder": "sequence"
+        },
+        {
+            "label": "build plugins",
+            "type": "shell",
+            "command": "dotnet build '${workspaceFolder}\\src\\PowerPlatform.Demo.Plugins\\' -c:Release; dotnet build '${workspaceFolder}\\src\\PowerPlatform.Demo.Plugins\\'"
+        },
+        {
+            "label": "build managed solution",
+            "type": "shell",
+            "command": "$env:solutionversion = (Select-Xml -Path '${workspaceFolder}\\src\\Solution\\src\\Other\\Solution.xml' -XPath '//Version' | Select-Object @{ n = 'Version'; e = { $_.Node.'#text' } }).Version.Replace('.', '_'); dotnet build '${workspaceFolder}\\src\\Solution\\' -c:Release -v:quiet /p:SolutionFileVersion=$env:solutionversion",
+            "dependsOn": [
+                "build plugins"
+            ]
+        },
+        {
+            "label": "build unmanaged solution",
+            "type": "shell",
+            "command": "$env:solutionversion = (Select-Xml -Path '${workspaceFolder}\\src\\Solution\\src\\Other\\Solution.xml' -XPath '//Version' | Select-Object @{ n = 'Version'; e = { $_.Node.'#text' } }).Version.Replace('.', '_'); dotnet build '${workspaceFolder}\\src\\Solution\\' -v:quiet /p:SolutionFileVersion=$env:solutionversion",
+            "dependsOn": [
+                "build plugins"
+            ]
+        },
+        {
+            "label": "sync solution",
+            "type": "shell",
+            "command": "pac solution sync --packagetype Both --solution-folder '${workspaceFolder}\\src\\Solution\\src\\'"
+        }
+    ]
+}

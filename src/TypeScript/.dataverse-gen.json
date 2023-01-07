@@ -1,0 +1,15 @@
+{
+    "entities": [
+        "contact"
+    ],
+    "actions": [],
+    "functions": [
+        "RetrieveMetadataChanges",
+        "WhoAmI"
+    ],
+    "output": {
+        "outputRoot": "./src/dataverse-gen"
+    },
+    "generateIndex": false,
+    "generateFormContext": true
+}

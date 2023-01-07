@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Mapping>
+       <!-- Match specific named files to an alternate folder. Solution Package drops files to obj\Metadata. So, relative path needs to work its way up -->
+       <FileToFile map="PowerPlatformDemoPlugins.dll" to="..\..\..\..\PowerPlatform.Demo.Plugins\bin\Debug\net462\PowerPlatform.Demo.Plugins.dll" />
+       <FileToFile map="ryr_ClientHooks.js" to="..\..\..\..\TypeScript\dist\ClientHooks.js" />
+       <!-- If you are not using TypeScript and bunding to a single file, map to the folder with individual JS files -->
+       <!-- <Folder map="WebResources" to="..\..\..\..\..\src\JavaScript" /> -->
+</Mapping>
