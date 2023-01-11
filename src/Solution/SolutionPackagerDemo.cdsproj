@@ -24,8 +24,8 @@
       <!-- The value for this property has to be passed during runtime when you run dotnet build -->
       <SolutionFileVersion></SolutionFileVersion>
       <SolutionPackageLogFilePath>$(MSBuildThisFileDirectory)\SolutionPackagerLogs\SolutionPackager$([System.DateTime]::Now.ToString("dd_MM_yyyy_HH_mm_ss")).log</SolutionPackageLogFilePath>
-      <SolutionPackageZipFilePath Condition="'$(Configuration)' == 'Debug'">$(OutputPath)$(MSBuildProjectName)_v$(SolutionFileVersion)_unmanaged.zip</SolutionPackageZipFilePath>
-      <SolutionPackageZipFilePath Condition="'$(Configuration)' == 'Release'">$(OutputPath)$(MSBuildProjectName)_v$(SolutionFileVersion)_managed.zip</SolutionPackageZipFilePath>
+      <SolutionPackageZipFilePath Condition="'$(SolutionFileVersion)' != '' AND '$(Configuration)' == 'Debug'">$(OutputPath)$(MSBuildProjectName)_v$(SolutionFileVersion)_unmanaged.zip</SolutionPackageZipFilePath>
+      <SolutionPackageZipFilePath Condition="'$(SolutionFileVersion)' != '' AND '$(Configuration)' == 'Release'">$(OutputPath)$(MSBuildProjectName)_v$(SolutionFileVersion)_managed.zip</SolutionPackageZipFilePath>
   </PropertyGroup>
 
   <ItemGroup>
