@@ -44,7 +44,7 @@
         {
             "label": "build managed solution",
             "type": "shell",
-            "command": "$env:solutionversion = (Select-Xml -Path '${workspaceFolder}\\src\\Solution\\src\\Other\\Solution.xml' -XPath '//Version' | Select-Object @{ n = 'Version'; e = { $_.Node.'#text' } }).Version.Replace('.', '_'); dotnet build '${workspaceFolder}\\src\\Solution\\' -c:Release -v:quiet /p:SolutionFileVersion=$env:solutionversion",
+            "command": "$env:solutionversion = (Select-Xml -Path '${workspaceFolder}\\src\\Solution\\src\\Other\\Solution.xml' -XPath '//Version' | Select-Object @{ n = 'Version'; e = { $_.Node.'#text' } }).Version.Replace('.', '_'); dotnet build '${workspaceFolder}\\src\\Solution\\' -c:Release -v:normal /p:SolutionFileVersion=$env:solutionversion",
             "dependsOn": [
                 "build plugins"
             ],
@@ -53,7 +53,7 @@
         {
             "label": "build unmanaged solution",
             "type": "shell",
-            "command": "$env:solutionversion = (Select-Xml -Path '${workspaceFolder}\\src\\Solution\\src\\Other\\Solution.xml' -XPath '//Version' | Select-Object @{ n = 'Version'; e = { $_.Node.'#text' } }).Version.Replace('.', '_'); dotnet build '${workspaceFolder}\\src\\Solution\\' -v:quiet /p:SolutionFileVersion=$env:solutionversion",
+            "command": "$env:solutionversion = (Select-Xml -Path '${workspaceFolder}\\src\\Solution\\src\\Other\\Solution.xml' -XPath '//Version' | Select-Object @{ n = 'Version'; e = { $_.Node.'#text' } }).Version.Replace('.', '_'); dotnet build '${workspaceFolder}\\src\\Solution\\' -v:normal /p:SolutionFileVersion=$env:solutionversion",
             "dependsOn": [
                 "build plugins"
             ],
